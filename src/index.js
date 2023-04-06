@@ -18,49 +18,60 @@ import randomPokemon from './utils/randomPokemon.js';
 
 /**
  * File handling
- * 
+ *
  * 1. List all files in the `resources/src` dir
  * 2. Duplicate them from `resources/src` to `resources/dst` dir via read and write streams
  */
 
-const RESOURCES_DIR = 'resources/';
+// const RESOURCES_DIR = 'resources/';
 
-/**
- * Returns files from a specified dir path
- */
-const ls = async (dirPath) => {
-  try {
-    const files = await readdir(dirPath);
-    return files;
-  } catch {
-    throw Error('Error listing files');
-  }
-};
+// /**
+//  * Returns files from a specified dir path
+//  */
+// const ls = async (dirPath) => {
+//   try {
+//     const files = await readdir(dirPath);
+//     return files;
+//   } catch {
+//     throw Error('Error listing files');
+//   }
+// };
 
-/**
- * Copy specified source file to destination path
- */
-const cp = (srcPath, dstPath, file) => {
-  try {
-    const dstFile = resolve(dstPath, file);
-    const srcFile = resolve(srcPath, file);
+// /**
+//  * Copy specified source file to destination path
+//  */
+// const cp = (srcPath, dstPath, file) => {
+//   try {
+//     const dstFile = resolve(dstPath, file);
+//     const srcFile = resolve(srcPath, file);
 
-    const writeStream = createWriteStream(dstFile);
-    const readStream = createReadStream(srcFile);
+//     const writeStream = createWriteStream(dstFile);
+//     const readStream = createReadStream(srcFile);
 
-    readStream.pipe(writeStream);
-    console.log(`${file} copied successfully.`);
-  } catch {
-    throw Error('Error copying file');
-  }
-};
+//     readStream.pipe(writeStream);
+//     console.log(`${file} copied successfully.`);
+//   } catch {
+//     throw Error('Error copying file');
+//   }
+// };
 
-const srcPath = resolve(RESOURCES_DIR, 'src');
-const dstPath = resolve(RESOURCES_DIR, 'dst');
+// const srcPath = resolve(RESOURCES_DIR, 'src');
+// const dstPath = resolve(RESOURCES_DIR, 'dst');
 
-const files = await ls(srcPath);
+// const files = await ls(srcPath);
 
-files.forEach(file => {
-  cp(srcPath, dstPath, file);
-});
+// files.forEach(file => {
+//   cp(srcPath, dstPath, file);
+// });
 
+// Buffers
+const b = Buffer.alloc(8);
+console.log(b, b.length);
+
+b.write('aloha');
+console.log(b);
+
+console.log(Buffer.from('string'));
+
+const b2 = Buffer.from([1, 2, 3]);
+console.log(b2);

@@ -12,7 +12,7 @@
 8. Asynchronous Control Flow ✅
 9. Node’s Event System
 10. Handling Errors ✅
-11. Using Buffers 
+11. Using Buffers ✅
 12. Working with Streams ✅
 13. Interacting with the File System ✅
 14. Process & Operating System
