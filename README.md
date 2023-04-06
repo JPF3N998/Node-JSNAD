@@ -10,7 +10,7 @@
 6. Packages & Dependencies ✅
 7. Node’s Module Systems ✅
 8. Asynchronous Control Flow ✅
-9. Node’s Event System
+9. Node’s Event System ✅
 10. Handling Errors ✅
 11. Using Buffers ✅
 12. Working with Streams ✅
@@ -22,3 +22,11 @@
 # File Handling
 
 [Node.js Event Loop Animated](https://dev.to/nodedoctors/an-animated-guide-to-nodejs-event-loop-3g62)
+
+
+# Node's Event System
+
+## References
+
+- https://dev.to/nodedoctors/an-animated-guide-to-nodejs-event-loop-3g62
+- https://nodejs.dev/en/learn/the-nodejs-event-emitter/
