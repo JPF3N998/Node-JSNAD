@@ -1,9 +1,9 @@
+import os from 'node:os';
 import { readdir } from 'node:fs/promises';
 import { createWriteStream, createReadStream } from 'node:fs';
 import { resolve } from 'node:path';
 import fibonacci from './utils/fibonacci.js';
 import randomPokemon from './utils/randomPokemon.js';
-
 // console.log(fibonacci(0));
 // console.log(fibonacci(1));
 // console.log(fibonacci(3));
@@ -65,13 +65,38 @@ import randomPokemon from './utils/randomPokemon.js';
 // });
 
 // Buffers
-const b = Buffer.alloc(8);
-console.log(b, b.length);
+// const b = Buffer.alloc(8);
+// console.log(b, b.length);
 
-b.write('aloha');
-console.log(b);
+// b.write('aloha');
+// console.log(b);
 
-console.log(Buffer.from('string'));
+// console.log(Buffer.from('string'));
 
-const b2 = Buffer.from([1, 2, 3]);
-console.log(b2);
+// const b2 = Buffer.from([1, 2, 3]);
+// console.log(b2);
+
+const {
+  platform,
+  arch,
+  release,
+} = os;
+
+const getCPUs = () => {
+  const output = [];
+  const cpus = os.cpus();
+  for (let i = 0; i < cpus.length; i++) {
+    const { model, speed } = cpus[i];
+    output.push(`Core ${i + 1}: ${model} - ${speed}\n`);
+  }
+  return output;
+};
+
+const sysInfo = `
+  platform: ${platform}
+  Architecture: ${arch}
+  OS: ${release}
+  # CPUs: ${'\n' + getCPUs()}
+`;
+
+console.log(sysInfo);

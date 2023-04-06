@@ -15,7 +15,7 @@
 11. Using Buffers ✅
 12. Working with Streams ✅
 13. Interacting with the File System ✅
-14. Process & Operating System
+14. Process & Operating System ✅
 15. Creating Child Processes
 16. Writing Unit Tests ✅
 
