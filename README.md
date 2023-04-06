@@ -21,14 +21,8 @@
 15. Creating Child Processes
 16. Writing Unit Tests ✅
 
-# File Handling
-
-[Node.js Event Loop Animated](https://dev.to/nodedoctors/an-animated-guide-to-nodejs-event-loop-3g62)
-
-
 # Node's Event System
 
-## References
+[Event Emitter](https://nodejs.dev/en/learn/the-nodejs-event-emitter/)
 
-- https://dev.to/nodedoctors/an-animated-guide-to-nodejs-event-loop-3g62
-- https://nodejs.dev/en/learn/the-nodejs-event-emitter/
+[Node.js Event Loop Animated](https://dev.to/nodedoctors/an-animated-guide-to-nodejs-event-loop-3g62)
