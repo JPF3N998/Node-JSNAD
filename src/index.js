@@ -1,11 +1,66 @@
+import { readdir } from 'node:fs/promises';
+import { createWriteStream, createReadStream } from 'node:fs';
+import { resolve } from 'node:path';
 import fibonacci from './utils/fibonacci.js';
 import randomPokemon from './utils/randomPokemon.js';
 
-console.log(fibonacci(0));
-console.log(fibonacci(1));
-console.log(fibonacci(3));
-console.log(fibonacci(5));
+// console.log(fibonacci(0));
+// console.log(fibonacci(1));
+// console.log(fibonacci(3));
+// console.log(fibonacci(5));
 
-console.log(await randomPokemon());
-console.log(await randomPokemon());
-console.log(await randomPokemon());
+// console.log(await randomPokemon());
+// console.log(await randomPokemon());
+// console.log(await randomPokemon());
+
+// const b = Buffer.from('abba');
+// console.log(b);
+
+/**
+ * File handling
+ * 
+ * 1. List all files in the `resources/src` dir
+ * 2. Duplicate them from `resources/src` to `resources/dst` dir via read and write streams
+ */
+
+const RESOURCES_DIR = 'resources/';
+
+/**
+ * Returns files from a specified dir path
+ */
+const ls = async (dirPath) => {
+  try {
+    const files = await readdir(dirPath);
+    return files;
+  } catch {
+    throw Error('Error listing files');
+  }
+};
+
+/**
+ * Copy specified source file to destination path
+ */
+const cp = (srcPath, dstPath, file) => {
+  try {
+    const dstFile = resolve(dstPath, file);
+    const srcFile = resolve(srcPath, file);
+
+    const writeStream = createWriteStream(dstFile);
+    const readStream = createReadStream(srcFile);
+
+    readStream.pipe(writeStream);
+    console.log(`${file} copied successfully.`);
+  } catch {
+    throw Error('Error copying file');
+  }
+};
+
+const srcPath = resolve(RESOURCES_DIR, 'src');
+const dstPath = resolve(RESOURCES_DIR, 'dst');
+
+const files = await ls(srcPath);
+
+files.forEach(file => {
+  cp(srcPath, dstPath, file);
+});
+

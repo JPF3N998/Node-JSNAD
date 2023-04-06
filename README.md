@@ -12,11 +12,13 @@
 8. Asynchronous Control Flow ✅
 9. Node’s Event System
 10. Handling Errors ✅
-11. Using Buffers
-12. Working with Streams
-13. Interacting with the File System
+11. Using Buffers 
+12. Working with Streams ✅
+13. Interacting with the File System ✅
 14. Process & Operating System
 15. Creating Child Processes
 16. Writing Unit Tests ✅
 
+# File Handling
 
+[Node.js Event Loop Animated](https://dev.to/nodedoctors/an-animated-guide-to-nodejs-event-loop-3g62)
